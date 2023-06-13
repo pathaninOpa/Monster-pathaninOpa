@@ -90,6 +90,4 @@ int monster::rand(int min, int max){
           return rand;
 }
 
-
-
 #endif
