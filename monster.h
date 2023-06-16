@@ -1,6 +1,7 @@
 #ifndef monster_h
 #define monster_h
 #include <iostream>
+#include <iomanip>
 #include <cstring>
 #include <random>
 using namespace std;
@@ -49,15 +50,16 @@ void monster::print(){
 }
 
 void monster::Attack(monster & b){// x.Attack(y)
-     cout<<"ATTACK!!!!!"<<endl;
-     if(this->hp>0){
-        int damage = rand(1, 99);
-        if (damage > 44){
-          cout<<"Critical Hit"<<endl;
-        }
-        b.hp-= damage;
-     }
+  int damage = rand(1, 99);
+  cout<<"ATTACK!!!!!"<<endl;
+    if(this->hp>0){
+      if (damage > 84){
+        cout<<"Critical Hit"<<endl;
+      }
+      b.hp-= damage;
+    }
   else cout<<"Lemme rest in peace, I am already dead! X("<<endl;
+  cout<<setw(6)<<".\n"<<setw(6)<<".\n"<<setw(6)<<".\n"<<damage<<" damage was done.."<<endl;
 }
 
 monster::~monster(){
